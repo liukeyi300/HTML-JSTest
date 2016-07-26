@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading component</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" >
+    <link rel="stylesheet" href="component/loading/loading.css" >
+    <style>
+        .loading-component {
+            position: absolute;
+            left: 500px;
+            top: 300px;
+            width: 400px;
+            height: 400px;
+            background:transparent;
+            border-radius: 50%;
+        }
+
+
+        .biggest-circle {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 380px;
+            height: 380px;
+            background:black;
+            border-color: rgba(0,255,255, 0.3) transparent;
+            border-width: 5px;
+            border-style: solid;
+            -webkit-animation: outer-rotate 3s linear infinite;
+            -o-animation: outer-rotate 3s linear infinite;
+            animation: outer-rotate 3s linear infinite;
+        }
+
+        .circle-1 {
+            width: 100%;
+            height: 100%;
+            border-color: rgba(0, 255, 255, 0.1) transparent;
+            border-width: 3px;
+            border-style: solid;
+        }
+
+        .middle-circle {
+            position: absolute;
+            left: 28px;
+            top: 28px;
+            height: 344px;
+            width: 344px;
+            border-color: rgba(0, 255, 255, 0.9) transparent ;
+            border-width: 3px;
+            border-style: solid;
+            background: rgba(0,255,255,0.15);
+            padding: 10px;
+            -webkit-animation: middle-rotate 2s linear infinite;
+            -o-animation: middle-rotate 2s linear infinite;
+            animation: middle-rotate 2s linear infinite;
+        }
+
+        .circle-2 {
+            position: absolute;
+            left: 38px;
+            top: 38px;
+            width: 324px;
+            height: 324px;
+            background: black;
+            border-color: rgba(0, 255, 255, 0.9) transparent;
+            border-width: 3px;
+            border-style: solid;
+
+            -webkit-animation: second-rotate 2s linear infinite;
+            -o-animation: second-rotate 2s linear infinite;
+            animation: second-rotate 2s linear infinite;
+        }
+
+        .small-circle {
+            position: absolute;
+            left: 49px;
+            top: 49px;
+            height: 302px;
+            width: 302px;
+            border-color: rgba(022,245,250,1) transparent;
+            border-width: 15px;
+            border-style: solid;
+            padding:10px;
+
+            -webkit-animation: inner-rotate 1.5s linear infinite;
+            -o-animation: inner-rotate 1.5s linear infinite;
+            animation: inner-rotate 1.5s linear infinite;
+        }
+
+        .circle-3 {
+            width: 100%;
+            height: 100%;
+            /*border-width: 10px;
+            border-style: solid;*/
+            /*background:radial-gradient(500px, white,rgba(0,255,255,0.9),black);*/
+            box-shadow: 0px 0px 10px 7px rgba(0, 255, 255, 0.6);
+        }
+
+        .mini-circle {
+            position: absolute;
+            left: 84px;
+            top: 84px;
+            height: 232px;
+            width: 232px;
+            border-color: rgba(0, 255, 255, 0.5);
+            border-style: solid;
+            border-width: 3px;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-component">
+        <div class="circle biggest-circle">
+            <div class="circle circle-1"></div>
+        </div>
+
+        <div class="circle middle-circle"></div>
+
+        <div class="circle circle-2"></div>
+
+        <div class="circle small-circle">
+            <div class="circle circle-3"></div>
+        </div>
+
+        <div class="circle mini-circle"></div>
+    </div>
+</body>
+</html>

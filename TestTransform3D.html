@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Transform3D</title>
+    <link rel="stylesheet" href="css/common.css">
+    <script src="jquery/jquery-2.1.4.min.js"></script>
+    <style>
+        /*div.square {
+            height: 300px;
+            width:300px;
+            -webkit-transform: rotateX(45deg) translateZ(90px);
+            -moz-transform: rotateX(45deg) translateZ(90px);
+            -ms-transform: rotateX(45deg) translateZ(90px);
+            -o-transform: rotateX(45deg) translateZ(90px);
+            transform: rotateX(45deg) translateZ(90px);
+
+            background: peachpuff;
+        }*/
+        .ball {
+            -webkit-animation: rotateBall 5s linear infinite;
+            -o-animation: rotateBall 5s linear infinite;
+            animation: rotateBall 5s linear infinite;
+        }
+        .ball div {
+            border-radius: 50%;
+            position:absolute;
+        }
+
+        .ball div:nth-child(2n) {
+            border: 1px solid purple;
+        }
+
+        .ball div:nth-child(2n+1) {
+            border: 1px solid purple;
+        }
+
+        @keyframes rotateBall {
+            0% {
+                -webkit-transform: rotateY(0deg);
+                -moz-transform: rotateY(0deg);
+                -ms-transform: rotateY(0deg);
+                -o-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotateY(360deg);
+                -moz-transform: rotateY(360deg);
+                -ms-transform: rotateY(360deg);
+                -o-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+    <script>
+        $(function() {
+            var D = 300;
+            var R = D / 2;
+            var numberOfCircle = 500;
+            for (var i = numberOfCircle; i >= 0; i --) {
+                var curR = R * Math.sqrt((numberOfCircle * numberOfCircle - i * i) / (numberOfCircle * numberOfCircle));
+                var div1 = $('<div class="circle-' + i +'"></div>');
+                var zPx = R * i / numberOfCircle;
+                var left = R - curR;
+                var top = R - curR;
+                div1.css({
+                    width: curR * 2 + 'px',
+                    height: curR * 2 + 'px',
+                    left: left + 'px',
+                    top: top + 'px',
+                    webkitTransform: 'translateZ(-' + zPx + 'px)',
+                    mozTransform: 'translateZ(-' + zPx + 'px)',
+                    msTransform: 'translateZ(-' + zPx + 'px)',
+                    oTransform: 'translateZ(-' + zPx + 'px)',
+                    transform: 'translateZ(-' + zPx + 'px)'
+                });
+
+                $('.ball').append(div1);
+            }
+
+            for (var i = 1; i <= numberOfCircle; i ++) {
+                var curR = R * Math.sqrt((numberOfCircle * numberOfCircle - i * i) / (numberOfCircle * numberOfCircle));
+                var div1 = $('<div class="circle+' + i +'"></div>');
+                var zPx = R * i / numberOfCircle;
+                var left = R - curR;
+                var top = R - curR;
+                div1.css({
+                    width: curR * 2 + 'px',
+                    height: curR * 2 + 'px',
+                    left: left + 'px',
+                    top: top + 'px',
+                    webkitTransform: 'translateZ(' + zPx + 'px)',
+                    mozTransform: 'translateZ(' + zPx + 'px)',
+                    msTransform: 'translateZ(' + zPx + 'px)',
+                    oTransform: 'translateZ(' + zPx + 'px)',
+                    transform: 'translateZ(' + zPx + 'px)'
+                });
+
+                $('.ball').append(div1);
+            }
+
+            $('.ball').css({
+                width: D + 'px',
+                height: D + 'px'
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div class="stage">
+    <div class="ball"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Test Holy Grail</title>
+        <style>
+            .holy-grail {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            header, footer {
+                flex:1;
+            }
+
+            .holy-grail-body {
+                display:flex;
+                flex: 1;
+            }
+
+            .holy-grail-nav, .holy-grail-ads {
+                flex: 0 0 12em;
+            }
+
+            .holy-grail-nav {
+                order: -1;
+            }
+        </style>
+    </head>
+    <body class="holy-grail">
+        <header>...</header>
+        <div class="holy-grail-body">
+            <main class="holy-grail-content">...</main>
+            <nav class="holy-grail-nav">...</nav>
+            <aside class="holy-grail-ads">...</aside>
+        </div>
+        <footer>...</footer>
+    </body>
+</html>

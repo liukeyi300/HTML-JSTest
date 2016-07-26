@@ -1,0 +1,86 @@
+.get-border(@width:3px, @opacity) when(isnumber(@opacity)) {
+  border-width: @width;
+  border-style: solid;
+  border-color: fade(@base-color, @opacity) transparent;
+}
+
+@keyframes first-rotate {
+  0% {
+    .get-transform(rotate(45deg));
+  }
+  100% {
+    .get-transform(rotate(-315deg));
+  }
+}
+
+@keyframes second-rotate {
+  0% {}
+  100% {
+    .get-transform(rotate(360deg));
+  }
+}
+
+@keyframes third-rotate {
+  0% {
+    .get-transform(rotate(-45deg));
+  }
+  100% {
+    .get-transform(rotate(-405deg));
+  }
+}
+
+@keyframes forth-rotate {
+  0% {
+    .get-transform(rotate(90deg));
+  }
+  100% {
+    .get-transform(rotate(450deg));
+  }
+}
+
+.l-loading {
+  background: @base-back;
+
+  .first-ring {
+    .get-boundary(100%, 100%);
+    .get-border(4px, 40%);
+    .get-animation(first-rotate);
+  }
+
+  .second-ring {
+    .get-boundary(130px, 130px);
+    .get-position(10px, 10px);
+    background: fade(@base-color, 20%);
+    .get-border(3px, 80%);
+    .get-animation(second-rotate, 1.67s);
+  }
+
+  .third-ring {
+    .get-boundary(102px, 102px);
+    .get-position(24px, 24px);
+    background: @base-back;
+    .get-border(3px, 80%);
+    .get-animation(third-rotate, 1.33s);
+  }
+
+  .forth-ring {
+    .get-boundary(74px, 74px);
+    .get-position(38px, 38px);
+    .get-border(10px, 90%);
+    .get-animation(forth-rotate, 1s);
+  }
+
+  .shine-ring {
+    .get-boundary(44px, 44px);
+    .get-position(53px, 53px);
+    box-shadow: 0px 0px 15px 6px fade(@base-color, 60%);
+  }
+
+  .inner-ring {
+    .get-boundary(24px, 24px);
+    .get-position(63px, 63px);
+    border-width: 2px;
+    border-style: solid;
+    border-color: fade(@base-color, 40%);
+  }
+}

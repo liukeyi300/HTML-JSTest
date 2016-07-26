@@ -1,0 +1,23 @@
+.get-animation(@animation-name, @duration:2s, @function:linear, @iteration:infinite, @direction : normal) {
+  -webkit-animation: @animation-name @duration @function @iteration @direction;
+  -o-animation: @animation-name @duration @function @iteration @direction;
+  animation: @animation-name @duration @function @iteration @direction;
+}
+
+.get-transform(@transform) {
+  -webkit-transform: @transform;
+  -moz-transform: @transform;
+  -ms-transform: @transform;
+  -o-transform: @transform;
+  transform: @transform;
+}
+
+.get-boundary(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.get-position(@left, @top) {
+  left: @left;
+  top: @top;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RotateCan</title>
+    <link rel="stylesheet" href="css/common.css">
+    <script src="jquery/jquery-2.1.4.min.js"></script>
+    <style>
+        .can {
+            position:absolute;
+            left:500px;
+            top: 500px;
+            width: 150px;
+            height:300px;
+            -webkit-animation: rotateCan 5s linear infinite;
+            -o-animation: rotateCan 5s linear infinite;
+            animation: rotateCan 5s linear infinite;
+            /*-webkit-transform: rotateX(45deg);
+            -moz-transform: rotateX(45deg);
+            -ms-transform: rotateX(45deg);
+            -o-transform: rotateX(45deg);
+            transform: rotateX(45deg);*/
+        }
+        .can .top, .bottom {
+            width:150px;
+            height:150px;
+            border-radius: 50%;
+            position:absolute;
+            top:75px;
+        }
+        
+        .can .top {
+            -webkit-transform: rotateX(90deg) translateZ(150px);
+            -moz-transform: rotateX(90deg) translateZ(150px);
+            -ms-transform: rotateX(90deg) translateZ(150px);
+            -o-transform: rotateX(90deg) translateZ(150px);
+            transform: rotateX(90deg) translateZ(150px);
+            background:black;
+        }
+        
+        .can .bottom {
+            -webkit-transform: rotateX(-90deg) translateZ(150px);
+            -moz-transform: rotateX(-90deg) translateZ(150px);
+            -ms-transform: rotateX(-90deg) translateZ(150px);
+            -o-transform: rotateX(-90deg) translateZ(150px);
+            transform: rotateX(-90deg) translateZ(150px);
+            background:navajowhite;
+        }
+        
+        .can .side {
+            height:300px;
+            width: 39.2px;
+
+            position:absolute;
+            left:55.4px;
+
+            background: white;
+        }
+
+        .can .side[data-no="1"] {
+            border-left: 1px solid black;
+        }
+        
+        @keyframes rotateCan {
+            0% {
+                -webkit-transform: rotateY(0deg) rotateX(-15deg);
+                -moz-transform: rotateY(0deg) rotateX(-15deg);
+                -ms-transform: rotateY(0deg) rotateX(-15deg);
+                -o-transform: rotateY(0deg) rotateX(-15deg);
+                transform: rotateY(0deg) rotateX(-15deg);
+            }
+            
+            100% {
+                -webkit-transform: rotateY(360deg) rotateX(-15deg);
+                -moz-transform: rotateY(360deg) rotateX(-15deg);
+                -ms-transform: rotateY(360deg) rotateX(-15deg);
+                -o-transform: rotateY(360deg) rotateX(-15deg);
+                transform: rotateY(360deg) rotateX(-15deg);
+            }
+        }
+    </style>
+    <script>
+        $(function() {
+            $('.side').each(function() {
+                var div = $(this),
+                    no = div.data('no'),
+                    degree = (no - 1) * 10;
+
+                div.css({
+                    webkitTransform: "rotateY(" + degree + "deg) translateZ(75px)",
+                    mozTransform: "rotateY(" + degree + "deg) translateZ(75px)",
+                    msTransform: "rotateY(" + degree + "deg) translateZ(75px)",
+                    oTransform: "rotateY(" + degree + "deg) translateZ(75px)",
+                    transform: "rotateY(" + degree + "deg) translateZ(75px)"
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="stage">
+    <div class="can">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        <div class="side" data-no="1"></div>
+        <div class="side" data-no="2"></div>
+        <div class="side" data-no="3"></div>
+        <div class="side" data-no="4"></div>
+        <div class="side" data-no="5"></div>
+        <div class="side" data-no="6"></div>
+        <div class="side" data-no="7"></div>
+        <div class="side" data-no="8"></div>
+        <div class="side" data-no="9"></div>
+        <div class="side" data-no="10"></div>
+        <div class="side" data-no="11"></div>
+        <div class="side" data-no="12"></div>
+        <div class="side" data-no="13"></div>
+        <div class="side" data-no="14"></div>
+        <div class="side" data-no="15"></div>
+        <div class="side" data-no="16"></div>
+        <div class="side" data-no="17"></div>
+        <div class="side" data-no="18"></div>
+        <div class="side" data-no="19"></div>
+        <div class="side" data-no="20"></div>
+        <div class="side" data-no="21"></div>
+        <div class="side" data-no="22"></div>
+        <div class="side" data-no="23"></div>
+        <div class="side" data-no="24"></div>
+        <div class="side" data-no="25"></div>
+        <div class="side" data-no="26"></div>
+        <div class="side" data-no="27"></div>
+        <div class="side" data-no="28"></div>
+        <div class="side" data-no="29"></div>
+        <div class="side" data-no="30"></div>
+        <div class="side" data-no="31"></div>
+        <div class="side" data-no="32"></div>
+        <div class="side" data-no="33"></div>
+        <div class="side" data-no="34"></div>
+        <div class="side" data-no="35"></div>
+        <div class="side" data-no="36"></div>
+    </div>
+</div>
+</body>
+</html>

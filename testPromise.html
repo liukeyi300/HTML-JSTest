@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery/jquery-2.1.4.min.js"></script>
+    <script>
+        $(function() {
+            Request('Dad')
+                .then(function() {
+                    Request('Uncle');
+                })
+                .then(function() {
+                    Request('Sister');
+                })
+                .then(function() {
+                    Danton.request({
+                        name:'xixixi',
+                        success:function() {
+                            console.log('Xixixi finally success');
+                        },
+                        error:function() {
+                            console.log('Wrong!Wrong!Wrong!');
+                        }
+                    })
+                })
+                .fail(function(name) {
+                    console.log('Failed on ' + name);
+                });
+        });
+
+        var Danton = {
+            welfare:"200k",
+            request:function(obj) {
+                if (Math.random() > 0.8) {
+                    obj.success();
+                } else {
+                    obj.error();
+                }
+            }
+        };
+
+        var Request = function(name) {
+            var d = $.Deferred();
+            var failed = 0;
+            var request = function() {
+               Danton.request({
+                   name:name,
+                   success:function() {
+                       console.log(name + " Success!");
+                       failed = 0;
+                       d.resolve();
+                   },
+                   error:function() {
+                       if (failed <= 10) {
+                           console.log("First Time " + name + " Failed! Retry for " + failed + " time!");
+                           failed ++;
+                           request();
+                       } else {
+                           console.log(name + " completely failed!");
+                           d.reject(name);
+                       }
+                   }
+               });
+            };
+            request();
+            return d.promise();
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

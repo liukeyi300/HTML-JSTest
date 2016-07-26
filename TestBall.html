@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            height:100%;
+            width:100%;
+            margin:0;
+            padding:0;
+            font-size:14px;
+            font-family: sans-serif;
+            background:black;
+        }
+
+        body {
+            padding-top: 200px;
+            box-sizing: border-box;
+        }
+        .ball {
+            height:500px;
+            width:500px;
+            margin:0 auto;
+            /*-webkit-transition: all .5s;
+            -moz-transition: all .5s;
+            -ms-transition: all .5s;
+            -o-transition: all .5s;
+            transition: all .5s;*/
+        }
+
+        .ball div {
+            transform-style: preserve-3d;
+        }
+
+        .ball-box {
+            width:500px;
+            height:500px;
+            -webkit-animation: rotateAinimation 20s linear infinite;
+            -o-animation: rotateAnimation 20s linear infinite;
+            animation: rotateAnimation 20s linear infinite;
+        }
+
+        .ball-box div {
+            width:500px;
+            height:500px;
+            display: inline-block;
+            border:1px solid #DDDDDD;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .x1 {
+            -webkit-transform: rotateY(0deg);
+            -moz-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            -o-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+        }
+
+        .x2 {
+            -webkit-transform: rotateY(40deg);
+            -moz-transform: rotateY(40deg);
+            -ms-transform: rotateY(40deg);
+            -o-transform: rotateY(40deg);
+            transform: rotateY(40deg);
+        }
+
+        .x3 {
+            -webkit-transform: rotateY(80deg);
+            -moz-transform: rotateY(80deg);
+            -ms-transform: rotateY(80deg);
+            -o-transform: rotateY(80deg);
+            transform: rotateY(80deg);
+        }
+
+        .x4 {
+            -webkit-transform: rotateY(120deg);
+            -moz-transform: rotateY(120deg);
+            -ms-transform: rotateY(120deg);
+            -o-transform: rotateY(120deg);
+            transform: rotateY(120deg);
+        }
+
+        .x5 {
+            -webkit-transform: rotateY(160deg);
+            -moz-transform: rotateY(160deg);
+            -ms-transform: rotateY(160deg);
+            -o-transform: rotateY(160deg);
+            transform: rotateY(160deg);
+            background:green;
+        }
+
+        .x6 {
+            -webkit-transform: rotateY(200deg);
+            -moz-transform: rotateY(200deg);
+            -ms-transform: rotateY(200deg);
+            -o-transform: rotateY(200deg);
+            transform: rotateY(200deg);
+        }
+
+        .x7 {
+            -webkit-transform: rotateY(240deg);
+            -moz-transform: rotateY(240deg);
+            -ms-transform: rotateY(240deg);
+            -o-transform: rotateY(240deg);
+            transform: rotateY(240deg);
+        }
+
+        .x8 {
+            -webkit-transform: rotateY(280deg);
+            -moz-transform: rotateY(280deg);
+            -ms-transform: rotateY(280deg);
+            -o-transform: rotateY(280deg);
+            transform: rotateY(280deg);
+        }
+        
+        .x9 {
+            -webkit-transform: rotateY(320deg);
+            -moz-transform: rotateY(320deg);
+            -ms-transform: rotateY(320deg);
+            -o-transform: rotateY(320deg);
+            transform: rotateY(320deg);
+        }
+
+        .y1 {
+
+            -webkit-transform: rotateX(90deg) translateZ(200px) scale(0.60);
+            -moz-transform: rotateX(90deg) translateZ(200px) scale(0.60);
+            -ms-transform: rotateX(90deg) translateZ(200px) scale(0.60);
+            -o-transform: rotateX(90deg) translateZ(200px) scale(0.60);
+            transform: rotateX(90deg) translateZ(200px) scale(0.60);
+        }
+
+        .y2 {
+            -webkit-transform: rotateX(90deg) translateZ(150px) scale(0.80);
+            -moz-transform: rotateX(90deg) translateZ(150px) scale(0.80);
+            -ms-transform: rotateX(90deg) translateZ(150px) scale(0.80);
+            -o-transform: rotateX(90deg) translateZ(150px) scale(0.80);
+            transform: rotateX(90deg) translateZ(150px) scale(0.80);
+        }
+
+        .y3 {
+            -webkit-transform: rotateX(90deg) translateZ(100px) scale(0.92);
+            -moz-transform: rotateX(90deg) translateZ(100px) scale(0.92);
+            -ms-transform: rotateX(90deg) translateZ(100px) scale(0.92);
+            -o-transform: rotateX(90deg) translateZ(100px) scale(0.92);
+            transform: rotateX(90deg) translateZ(100px) scale(0.92);
+        }
+
+        .y4 {
+            -webkit-transform: rotateX(90deg) translateZ(50px) scale(0.98);
+            -moz-transform: rotateX(90deg) translateZ(50px) scale(0.98);
+            -ms-transform: rotateX(90deg) translateZ(50px) scale(0.98);
+            -o-transform: rotateX(90deg) translateZ(50px) scale(0.98);
+            transform: rotateX(90deg) translateZ(50px) scale(0.98);
+        }
+
+        .y5 {
+            background:red;
+            -webkit-transform: rotateX(90deg);
+            -moz-transform: rotateX(90deg);
+            -ms-transform: rotateX(90deg);
+            -o-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+        }
+
+        .y6 {
+            -webkit-transform: rotateX(90deg) translateZ(-50px) scale(0.98);
+            -moz-transform: rotateX(90deg) translateZ(-50px) scale(0.98);
+            -ms-transform: rotateX(90deg) translateZ(-50px) scale(0.98);
+            -o-transform: rotateX(90deg) translateZ(-50px) scale(0.98);
+            transform: rotateX(90deg) translateZ(-50px) scale(0.98);
+        }
+
+        .y7 {
+            -webkit-transform: rotateX(90deg) translateZ(-100px) scale(0.92);
+            -moz-transform: rotateX(90deg) translateZ(-100px) scale(0.92);
+            -ms-transform: rotateX(90deg) translateZ(-100px) scale(0.92);
+            -o-transform: rotateX(90deg) translateZ(-100px) scale(0.92);
+            transform: rotateX(90deg) translateZ(-100px) scale(0.92);
+        }
+
+        .y8 {
+            -webkit-transform: rotateX(90deg) translateZ(-150px) scale(0.80);
+            -moz-transform: rotateX(90deg) translateZ(-150px) scale(0.80);
+            -ms-transform: rotateX(90deg) translateZ(-150px) scale(0.80);
+            -o-transform: rotateX(90deg) translateZ(-150px) scale(0.80);
+            transform: rotateX(90deg) translateZ(-150px) scale(0.80);
+        }
+
+        .y9 {
+            -webkit-transform: rotateX(90deg) translateZ(-200px) scale(0.60);
+            -moz-transform: rotateX(90deg) translateZ(-200px) scale(0.60);
+            -ms-transform: rotateX(90deg) translateZ(-200px) scale(0.60);
+            -o-transform: rotateX(90deg) translateZ(-200px) scale(0.60);
+            transform: rotateX(90deg) translateZ(-200px) scale(0.60);
+        }
+        
+        @keyframes rotateAnimation {
+            0% {
+                -webkit-transform: rotate(-20deg) rotateX(-20deg) rotateY(0deg);
+                -moz-transform: rotate(-20deg) rotateX(-20deg) rotateY(0deg);
+                -ms-transform: rotate(-20deg) rotateX(-20deg) rotateY(0deg);
+                -o-transform: rotate(-20deg) rotateX(-20deg) rotateY(0deg);
+                transform: rotate(-20deg) rotateX(-20deg) rotateY(0deg);
+            }
+            
+            100% {
+                -webkit-transform: rotate(-20deg) rotateX(-20deg) rotateY(360deg);
+                -moz-transform: rotate(-20deg) rotateX(-20deg) rotateY(360deg);
+                -ms-transform: rotate(-20deg) rotateX(-20deg) rotateY(360deg);
+                -o-transform: rotate(-20deg) rotateX(-20deg) rotateY(360deg);
+                transform: rotate(-20deg) rotateX(-20deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball">
+        <div class="ball-box">
+            <div class="x1"></div>
+            <div class="x2"></div>
+            <div class="x3"></div>
+            <div class="x4"></div>
+            <div class="x5"></div>
+            <div class="x6"></div>
+            <div class="x7"></div>
+            <div class="x8"></div>
+            <div class="x9"></div>
+            <div class="y1"></div>
+            <div class="y2"></div>
+            <div class="y3"></div>
+            <div class="y4"></div>
+            <div class="y5"></div>
+            <div class="y6"></div>
+            <div class="y7"></div>
+            <div class="y8"></div>
+            <div class="y9"></div>
+        </div>
+    </div>
+</body>
+</html>

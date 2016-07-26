@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery/jquery-1.10.2.min.js"></script>
+    <script src="component/l-loading/l-loading-core.js"></script>
+    <script src="component/l-loading/l-loading-ring.js"></script>
+
+    <link rel="stylesheet" href="component/l-loading/css/l-loading-core.css">
+    <link rel="stylesheet" href="component/l-loading/less/l-loading-ring/l-loading-shinny.css">
+
+    <style>
+        html, body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .test1 {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 500px;
+            height: 200px;
+            /*background: rgba(0, 176, 255, 0.8);*/
+            background: white;
+        }
+    </style>
+    <script>
+       $(function() {
+           let a = true;
+           LLoading.importNewType({
+               name: 'test',
+               createLoading: function() {
+                   alert('hahaha');
+               }
+           });
+            $('.test').on('click', function() {
+                if (a) {
+                    $('.test1').loading({type : 'ring'});
+                    a = false;
+                } else {
+                    $('.test1').removeLoading();
+                    a = true;
+                }
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+    <button class="test">abc</button>
+    <div class="test1">
+        <button>abcas</button>
+    </div>
+
+<span> abcasdf</span>
+</body>
+</html>

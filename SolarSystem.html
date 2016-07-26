@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SolarSystem</title>
+    <link rel="stylesheet" href="css/common.css">
+    <script src="jquery/jquery-2.1.4.min.js"></script>
+
+    <style>
+        .sun {
+            left: 850px;
+            top: 350px;
+            -webkit-animation: rotate_y_test 10s linear infinite;
+            -o-animation: rotate_y_test 10s linear infinite;
+            animation: rotate_y_test 10s linear infinite;
+        }
+
+        .earth {
+            left: 650px;
+            top: 150px;
+            border: 5px solid #00CCFF;
+            border-radius: 50%;
+            /*-webkit-filter: opacity(0.5);*/
+            position:absolute;
+            -webkit-animation: earth-rotate 2s linear infinite;
+            -o-animation: earth-rotate 2s linear infinite;
+            animation: earth-rotate 2s linear infinite;
+
+        }
+
+        .earth-ball {
+            position: absolute;
+        }
+
+        .circle {
+            border-radius: 50%;
+            border-width: 3px;
+            border-style: solid;
+            position:absolute;
+        }
+
+        .circle:nth-child(2n) {
+            border-color: /*beige*/purple;
+        }
+
+        .circle:nth-child(2n+1) {
+            border-color: purple;
+        }
+        
+        @keyframes rotate_y_test {
+            0% {
+                -webkit-transform: rotateZ(15deg) rotateY(0deg);
+                -moz-transform: rotateZ(15deg) rotateY(0deg);
+                -ms-transform: rotateZ(15deg) rotateY(0deg);
+                -o-transform: rotateZ(15deg) rotateY(0deg);
+                transform: rotateZ(15deg) rotateY(0deg);
+            }
+            
+            100% {
+                -webkit-transform: rotateZ(15deg) rotateY(360deg);
+                -moz-transform: rotateZ(15deg) rotateY(360deg);
+                -ms-transform: rotateZ(15deg) rotateY(360deg);
+                -o-transform: rotateZ(15deg) rotateY(360deg);
+                transform: rotateZ(15deg) rotateY(360deg);
+            }
+        }
+        
+        @keyframes earth-rotate {
+            0% {
+                -webkit-transform: rotateX(80deg) rotateY(10deg) rotateZ(0deg);
+                -moz-transform: rotateX(80deg) rotateY(10deg) rotateZ(0deg);
+                -ms-transform: rotateX(80deg) rotateY(10deg) rotateZ(0deg);
+                -o-transform: rotateX(80deg) rotateY(10deg) rotateZ(0deg);
+                transform: rotateX(80deg) rotateY(10deg) rotateZ(0deg);
+            }
+            
+            100% {
+                -webkit-transform: rotateX(80deg) rotateY(10deg) rotateZ(360deg);
+                -moz-transform: rotateX(80deg) rotateY(10deg) rotateZ(360deg);
+                -ms-transform: rotateX(80deg) rotateY(10deg) rotateZ(360deg);
+                -o-transform: rotateX(80deg) rotateY(10deg) rotateZ(360deg);
+                transform: rotateX(80deg) rotateY(10deg) rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="sun"></div>
+        <div class="earth">
+            <div class="earth-ball"></div>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            var D = 200,
+                R = D / 2;
+                numberOfPiece = 9;
+
+            for (var i = 0; i < numberOfPiece; i ++) {
+                var div = $('<div class="circle"></div>');
+                var deg = i * 180 / numberOfPiece;
+                div.css({
+                    width: D + 'px',
+                    height: D + 'px',
+                    webkitTransform: 'rotateY('+ deg +'deg)',
+                    mozTransform: 'rotateY('+ deg +'deg)',
+                    msTransform: 'rotateY('+ deg +'deg)',
+                    oTransform: 'rotateY('+ deg +'deg)',
+                    transform: 'rotateY('+ deg +'deg)'
+                });
+                $('.sun').append(div);
+            }
+
+            $('.sun').css({
+                width: D + 'px',
+                height: D + 'px'
+            });
+
+            D = 600;
+            R = D / 2;
+
+            $('.earth').css({
+                width: D + 'px',
+                height: D + 'px'
+            });
+
+            D = 80;
+            R = D / 2;
+
+            for (var i = 0; i < numberOfPiece; i ++) {
+                var div = $('<div class="circle"></div>');
+                var deg = i * 180 / numberOfPiece;
+                div.css({
+                    width: D + 'px',
+                    height: D + 'px',
+                    webkitTransform: 'rotateY('+ deg +'deg)',
+                    mozTransform: 'rotateY('+ deg +'deg)',
+                    msTransform: 'rotateY('+ deg +'deg)',
+                    oTransform: 'rotateY('+ deg +'deg)',
+                    transform: 'rotateY('+ deg +'deg)'
+                });
+                $('.earth-ball').append(div);
+            }
+
+            for (var i = 0; i < numberOfPiece; i ++) {
+                var div = $('<div class="circle"></div>');
+                var curR = R * Math.sqrt((numberOfPiece * numberOfPiece - i * i) / (numberOfPiece * numberOfPiece));
+                var zPx = i * R / numberOfPiece;
+                div.css({
+                    width: curR * 2 + 'px',
+                    height: curR * 2 + 'px',
+                    left: R - curR + 'px',
+                    top: R - curR + 'px',
+                    borderWidth: '1px',
+                    webkitTransform: 'rotateX(90deg) translateZ(' + zPx +'px)',
+                    mozTransform: 'rotateX(90deg) translateZ(' + zPx +'px)',
+                    msTransform: 'rotateX(90deg) translateZ(' + zPx +'px)',
+                    oTransform: 'rotateX(90deg) translateZ(' + zPx +'px)',
+                    transform: 'rotateX(90deg) translateZ(' + zPx +'px)'
+                });
+                $('.earth-ball').append(div);
+            }
+            for (var i = 1; i <= numberOfPiece; i ++) {
+                var div = $('<div class="circle"></div>');
+                var curR = R * Math.sqrt((numberOfPiece * numberOfPiece - i * i) / (numberOfPiece * numberOfPiece));
+                var zPx = i * R / numberOfPiece;
+                div.css({
+                    width: curR * 2 + 'px',
+                    height: curR * 2 + 'px',
+                    left: R - curR + 'px',
+                    top: R - curR + 'px',
+                    borderWidth: '1px',
+                    webkitTransform: 'rotateX(90deg) translateZ(-' + zPx +'px)',
+                    mozTransform: 'rotateX(90deg) translateZ(-' + zPx +'px)',
+                    msTransform: 'rotateX(90deg) translateZ(-' + zPx +'px)',
+                    oTransform: 'rotateX(90deg) translateZ(-' + zPx +'px)',
+                    transform: 'rotateX(90deg) translateZ(-' + zPx +'px)'
+                });
+                $('.earth-ball').append(div);
+            }
+
+            var top = 300 - 150 * Math.sqrt(2) - 40;
+            var left = 600 - 80 - top;
+
+            console.log('top: ' + top + 'left: ' + left);
+
+            $('.earth-ball').css({
+                position: 'absolute',
+                width: D + 'px',
+                height: D + 'px',
+                left: left + 'px',
+                top: top + 'px'
+            });
+        });
+    </script>
+</body>
+</html>

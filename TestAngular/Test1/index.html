@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="test1" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../angular/angular.min.js"></script>
+    <script src="controller.js"></script>
+</head>
+<body >
+
+<ul ng-controller="PhoneListCtrl as phones">
+    <li ng-repeat="phone in phones">
+        {{phone.name}}
+        <p>{{phone.snippet}}</p>
+    </li>
+</ul>
+</body>
+
+</html>

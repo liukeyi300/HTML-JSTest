@@ -1,0 +1,121 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    background:#3B5999;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+}
+
+.bordered {
+    border:5px solid yellow !important;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px 0 0 40px;
+    z-index: 10001;
+}
+
+.menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 20px 40px 0 0;
+    z-index:10001;
+}
+
+.logo>img, .logo>span, .menu>img, .menu>span {
+    vertical-align: middle;
+    color:white;
+}
+
+.scroll-container {
+    position:absolute;
+    top:50%;
+    right:0;
+    font-size: 18px;
+    margin-right: 90px;
+    z-index:10001;
+}
+
+.tab-container {
+    margin-top:15px;
+    width:130px;
+    text-align: center;
+    vertical-align: middle;
+    position:relative;
+}
+
+.tips-container {
+    border-radius:4px;
+    position:relative;
+    background: #899BC2;
+    transition: opacity 1s;
+}
+
+.arrow {
+    border:5px solid;
+    border-color: transparent;
+    border-left-color: #899BC2;
+    position: absolute;
+    top: 5px;
+    right: -10px;
+}
+
+.tab-select {
+    position:absolute;
+    top:2px;
+    right:-34px;
+    width:12px;
+    height:12px;
+    border-radius: 15px;
+    border:3px solid white;
+    background: #3B5999;
+    cursor: pointer;
+}
+
+.content>div {
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-3
+}
+
+.content1 {
+    background: red;
+}
+
+.content2 {
+    background: yellow;
+}
+
+.content3 {
+    background: blue;
+}
+
+.content4 {
+    background: black;
+}
+
+.power-by {
+    position:fixed;
+    opacity:1;
+    color: white;
+    bottom: 5px;
+    left: 5px;
+    z-index:10001;
+}
+

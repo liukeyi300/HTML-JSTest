@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两侧滑动，中间固定</title>
+    <style>
+        html, body {
+            margin:0;
+            padding:0;
+        }
+        .left {
+            float:left;
+            width:16%;
+            height:200px;
+        }
+        .middle {
+            float:left;
+            width:10px;
+            background:green;
+            border:1px solid black;
+            height:200px;
+            position:relative;
+            z-index: 10;
+            cursor:pointer;
+        }
+        .right {
+            float:left;
+            width:84%;
+            height:200px;
+            -webkit-transition:margin-left 1s;
+            transition:margin-left 1s;
+        }
+
+        .left, .right {
+            margin-left:-6px;
+        }
+        .left .inner,
+        .right .inner {
+            margin-left:6px;
+            background:orangered;
+            height:100%;
+        }
+        .clean {
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+<div class="left">
+    <div class="inner">haha</div>
+</div>
+<div class="middle"></div>
+<div class="right">
+    <div class="inner">xixi</div>
+</div>
+<div class="clean"></div>
+<script src="jquery/jquery-2.1.4.min.js"></script>
+<script>
+    count = 0;
+    $(function() {
+        $('.middle').on('click', function(e){
+            if (count % 2 === 0) {
+                $('.left').width('0%');
+                $('.left .inner').css('margin-left', '0px');
+                $('.right').width('100%');
+                $('.right').css('margin-left', '-12px');
+                $('.right .inner').css('margin-left', '12px');
+            } else {
+                $('.left').width('16%');
+                $('.left .inner').css('margin-left', '6px');
+                $('.right').width('84%');
+                $('.right').css('margin-left', '-6px');
+                $('.right .inner').css('margin-left', '6px');
+            }
+            count ++;
+        });
+        var url2 = 'http://www.pm25.in/api/querys/pm2_5.json?city=zhuhai&token=5j1znBVAsnSf5xQyNQyq';
+        var url = 'http://192.168.0.110:4444/WebService1/WebService1.asmx/HelloWorld';
+        /*$.get(url2, {}, function(data){
+
+            alert(data);
+        },'json');*/
+        $.ajax({
+            url:url2,
+            type:'GET',
+            header:{
+                'Accept':'application/json'
+            },
+            success:function(d) {
+                alert(d.result);
+            }
+        });
+    });
+</script>
+</body>
+</html>

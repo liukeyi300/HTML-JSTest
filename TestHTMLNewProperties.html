@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background: #b0b0b0;
+        }
+        .custom {
+            display: inline-block;
+            position: relative;
+        }
+
+        .custom:hover {
+            background: transparent;
+        }
+
+        .custom:hover:after {
+            content: attr(data-hover-response);
+            color: black;
+            position: absolute;
+            left: 0;
+        }
+
+        .radius {
+            width: 200px;
+            padding: 20px;
+            background: #a0b3d6;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+        }
+
+        .radius-in {
+            border-radius: 10px;
+            height: 200px;
+            background: #FFFFFF;
+        }
+
+        .box {
+            margin: 40px;
+            padding: 25px;
+            position: relative;
+            font-size: 24px;
+            background:#FFFFFF;
+        }
+
+        .cor {
+            position: absolute;
+            overflow: hidden;
+            border: 16px solid transparent;
+            border-right-color: #FFFFFF;
+            left: -32px;
+            top: 13px;
+        }
+
+        .drop-shadow {
+            filter: drop-shadow(5px 5px 10px black);
+            -webkit-filter: drop-shadow(5px 5px 10px black);
+        }
+
+        .outer {
+            width: 400px;
+            height: 300px;
+            background: #f0f3f9;
+            overflow: hidden;
+            writing-mode: tb-rl;
+            -webkit-writing-mode: vertical-rl;
+            -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+        }
+
+        .inner {
+            display: block;
+            margin-top: auto;
+            margin-bottom: auto;
+            height: 200px;
+            width: 200px;
+            background: #00b0ff;
+        }
+
+        .btn {
+            display: block;
+            color: #a78252;
+            background-color: #ddc390;
+            width: 85px; height: 85px;
+            line-height: 85px;
+            border: 6px solid #ddc390;
+            border-radius: 50%;
+            box-shadow: inset 0 0 0 1px #d6b681, 0 1px, 0 2px, 0 3px, 0 4px;
+            text-align: center;
+            -webkit-transition: border-color .25s, background-color .25s;
+            transition: border-color .25s, background-color .25s;
+            font-size: 42px;
+            cursor: pointer;
+        }
+
+        .btn:active {
+            text-indent: 2px;
+        }
+
+        .verticle-mode {
+            writing-mode: tb-rl;
+            -webkit-writing-mode: vertical-rl;
+            writing-mode: vertical-rl;
+            *writing-mode: tb-rl;
+        }
+
+        div {
+            height: 50px;
+            width: 900px;
+            direction: rtl;
+        }
+
+        div::before {
+            content: '■';
+        }
+
+        a {
+
+        }
+    </style>
+</head>
+<body>
+    <!--figure>
+        <img src="./jquery/a.png" alt="Test">
+        <figCaption>
+            <p>Help Me!</p>
+        </figCaption>
+    </figure-->
+
+    <!--ul contenteditable="true">
+        <li>悼念遇难香港同胞 </li>
+        <li>深圳特区30周年</li>
+        <li>伊春空难</li>
+    </ul-->
+
+    <!--a href="#" class="custom" data-hover-response="Not hahahaha">A</a-->
+    <!--div class="radius">
+        <div class="radius-in"></div>
+    </div-->
+
+    <div class="box drop-shadow">
+        <div class="cor"></div>
+        filter: drop-shadow
+    </div>
+
+    <!--div class="outer">
+        <div class="inner"></div>
+    </div-->
+    <!--div>
+        <button>领</button>
+        <button>领1</button>
+        <button>领2</button>
+        <button>领3</button>
+        <button>领4</button>
+    </div-->
+
+
+    <script>
+        /*function Point(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        Point.prototype.getLength = function() {
+            return Math.sqrt(this.x * this.x + this.y * this.y);
+        };
+
+        Point.prototype.getHeight = function() {
+            return this.x + this.y;
+        };*/
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CircleRotate</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: 'Segoe WP', 'Segoe UI Symbol', 'Segoe UI', sans-serif;
+            background: #DDDDDD;
+            overflow: hidden;
+        }
+
+        .stage {
+            height:100%;
+            width:100%;
+            overflow-x: hidden;
+        }
+
+        .circle1 {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: -webkit-radial-gradient(circle at 190px 80px, #FFFFFF, #222222);
+            background: -o-radial-gradient(circle at 190px 80px, #FFFFFF, #222222);
+            background: -moz-radial-gradient(circle at 190px 80px, #FFFFFF, #222222);
+            background: radial-gradient(circle at 190px 80px, #FFFFFF, #222222);
+            position: absolute;
+            z-index: 1;
+
+            -webkit-animation: myRotate 10s ease-in-out infinite;
+            -o-animation: myRotate 10s ease-in-out infinite;
+            animation: myRotate 10s ease-in-out infinite;
+        }
+        
+        @keyframes myRotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+                left: -300px;
+            }
+            
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="stage">
+    <div class="circle1"></div>
+</div>
+</body>
+</html>

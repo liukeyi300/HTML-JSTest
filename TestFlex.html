@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Flex</title>
+    <style>
+        .box {
+            width: 60px;
+            height: 60px;
+            background: #AAAAAA;
+            border: 3px solid #DDDDDD;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item {
+            background:black;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .item:nth-child(2) {
+            align-self: center;
+        }
+        
+        .grid {
+            display: flex;
+        }
+
+        .grid-cell {
+            flex: 1;
+        }
+
+        .u-lof4 {
+            flex: 0 0 25%;
+        }
+
+        .u-lof3 {
+            flex: 0 0 33.3333%;
+        }
+    </style>
+</head>
+<body>
+<div class="grid">
+    <!--div class="item"></div>
+    <div class="item"></div-->
+    <div class="grid-cell u-lof4">123</div>
+    <div class="grid-cell">456</div>
+    <div class="grid-cell u-lof3">789</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/kendo/kendo.common.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/kendo/kendo.rtl.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/kendo/kendo.default.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/kendo/kendo.dataviz.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/kendo/kendo.dataviz.default.min.css" type="text/css" />
+    <style>
+        html, body {
+            margin:0;
+            padding:0;
+        }
+        .container {
+            height:50px;
+            width:1000px;
+        }
+        
+        .content {
+            height:100%;
+            width:25%;
+            box-sizing: border-box;
+            padding-right:2px;
+            float:left;
+        }
+
+        .clear {
+            clear:both;
+        }
+
+        .left {
+            float:left;
+            width:0;
+            height:100%;
+        }
+
+        .right {
+            float:right;
+            width:2px;
+            height:100%;
+            background: orangered;
+        }
+
+        .middle {
+            height:100%;
+            background:greenyellow;
+        }
+
+        .right:hover{
+            cursor: ew-resize;
+        }
+
+    </style>
+    <script src="jquery/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="left"></div>
+            <div class="middle"></div>
+            <div class="right"></div>
+        </div>
+        <div class="content">
+            <div class="left"></div>
+            <div class="middle"></div>
+            <div class="right"></div>
+        </div>
+        <div class="content">
+            <div class="left"></div>
+            <div class="middle"></div>
+            <div class="right"></div>
+        </div>
+        <div class="content">
+            <div class="left"></div>
+            <div class="middle"></div>
+            <div class="right"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <script src="kendo/kendo.all.js"></script>
+    <script>
+        $(function() {
+
+        });
+    </script>
+</body>
+</html>
