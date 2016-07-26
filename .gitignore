@@ -301,3 +301,15 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.gif
+css/kendo/Default/editor.png
+*.png
+css/kendo/images/kendoui.ttf
+*.woff
+css/kendo/kendo.common.min.css
+*.css
+kendo/kendo.all.js
+*.ts
+*.map
+kendo/kendo.all.min.js
+*.svg
