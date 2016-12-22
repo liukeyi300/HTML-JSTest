@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        #test {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background: #0c688d;
+            color: white;
+            padding-left: 0;
+        }
+    </style>
+
+    <script>
+        window.onload = function() {
+            var el = document.getElementById('test');
+            var width = el.clientWidth;
+            var frameTime = 5;
+            var totalTime = 20000;
+            var frameWidth = width * frameTime / totalTime;
+            (function(el, w, fw) {
+                setInterval(function() {
+                    var currentPadding;
+                    if (el.style.paddingLeft === "") {
+                        currentPadding = 0;
+                    } else {
+                        currentPadding = parseFloat(el.style.paddingLeft) + fw;
+                    }
+                    if (currentPadding > w) {
+                        currentPadding = 0;
+                    }
+                    if (currentPadding !== 0) {
+                        el.style.paddingLeft = currentPadding + 'px';
+                    } else {
+                        el.style.paddingLeft = '0';
+                    }
+                }, frameTime);
+            })(el, width, frameWidth);
+        };
+    </script>
+</head>
+<body>
+    <div id="test">HAHAHAHAHAHAAHAHHA</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Geolocation</title>
+</head>
+<body>
+<script>
+    if (window.navigator.geolocation) {
+        window.navigator.geolocation.getCurrentPosition(showPosition)
+    }
+    function showPosition(position) {
+        console.log(position);
+    }
+</script>
+</body>
+</html>

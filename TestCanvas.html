@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Canvas</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+
+    <script>
+        var c = document.getElementById('myCanvas');
+        var cxt = c.getContext("2d");
+
+        cxt.fillStyle = "#FF0000";
+        cxt.fillRect(0,0,25,25);
+
+        cxt.strokeStyle = "#FF00FF";
+        cxt.moveTo(50, 50);
+        cxt.lineTo(100,100);
+        cxt.lineTo(200,100);
+        cxt.stroke();
+
+        cxt.strokeStyle = "#00FF00";
+        cxt.beginPath();
+        cxt.arc(300,300,50,0, Math.PI, true);
+        cxt.closePath();
+        cxt.stroke();
+
+        cxt.strokeStyle = '#00FFFF';
+        cxt.beginPath();
+        cxt.moveTo(300, 50);
+        cxt.quadraticCurveTo(275, 50, 275, 100);
+        cxt.closePath();
+        cxt.stroke();
+
+        cxt.beginPath();
+        cxt.moveTo(75,40);
+        cxt.bezierCurveTo(75,37,70,25,50,25);
+        cxt.bezierCurveTo(20,25,20,62.5,20,62.5);
+        cxt.bezierCurveTo(20,80,40,102,75,120);
+        cxt.bezierCurveTo(110,102,130,80,130,62.5);
+        cxt.bezierCurveTo(130,62.5,130,25,100,25);
+        cxt.bezierCurveTo(85,25,75,37,75,40);
+        cxt.fill();
+
+        document.getElementById('myCanvas').addEventListener('click', function(ev) {
+            console.log(ev);
+        });
+
+
+    </script>
+</body>
+</html>

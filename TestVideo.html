@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Video</title>
+</head>
+<body>
+<button id="play-pause">播放/暂停</button>
+<button id="big">变大</button>
+    <video id="myVideo">
+        <source src="video/movie.ogg" />
+    </video>
+
+<script>
+    var myV = document.getElementById('myVideo'),
+        pp = document.getElementById('play-pause'),
+        big = document.getElementById('big');
+
+    pp.addEventListener('click', function(e) {
+        if (myV.paused) {
+            myV.play();
+        } else {
+            myV.pause();
+        }
+    });
+
+    big.addEventListener('click', function(e) {
+        myV.width = 800;
+        //myV.height = 800;
+    });
+</script>
+</body>
+</html>

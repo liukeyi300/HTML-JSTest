@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="jquery/jquery-2.1.4.min.js"></script>
-    <script src="testAsync.js"></script>
 </head>
 <body>
+<script>
 
+    (function(i) {
+        setInterval(function() {
+            var xhr = new XMLHttpRequest();
+            var data = [{
+                soId : 'TestLky' + i,
+                clientName : 'Testlky',
+                soDate : '2016-12-08 14:50:49',
+                clientAddress : '范德萨发',
+                saleOrg : '麦富迪',
+                remark : null,
+                soItems : [{
+                    matId : 'A010CH',
+                    soiType : 'D',
+                    pckMode : '袋装',
+                    unitQty : 1,
+                    petName : null,
+                    matFunc: '肠道护理,增强免疫,亮泽被毛',
+                    petAge:'成犬期',
+                    petBirthday:null,
+                    petWeight:12.00,
+                    petImageURL:null,
+                    petBreed:'北京犬',
+                    petExercise:'0.5-1h',
+                    petFeedQty: 182,
+                    petFeedFrq: '1-2',
+                    masterQuote: '范德萨发生发生方式飞洒发的说法大师法第三方大师傅大师傅是大幅度是发'
+                }]
+            }];
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        console.log(xhr.responseText);
+                    }
+                }
+            };
+
+            xhr.open('POST', 'http://localhost:8050/Services/GambolSalesOrderService.asmx/UploadSO', true);
+            xhr.setRequestHeader('Username', 'eCommerce');
+            xhr.setRequestHeader('Password', 'password');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8');
+            xhr.send('jsonData=' + JSON.stringify(data));
+            i ++;
+        }, 1000);
+    })(1);
+
+
+</script>
 </body>
 </html>

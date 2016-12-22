@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function calculate() {
+        var num = 10000000000;
+        var r = 0;
+        for (var i = 1; i < num; i++) {
+            r += i;
+        }
+        alert(r);
+    }
+    calculate();*/
+    var w = new Worker('TestWebWorker.js');
+    w.postMessage(1000000000);
+    w.onmessage = function(e) {
+        console.log(e);
+    };
+</script>
+</body>
+</html>

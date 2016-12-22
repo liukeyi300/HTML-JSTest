@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Local Storage</title>
+</head>
+<body>
+<script>
+    /*if (window.localStorage.pageCount) {
+        window.localStorage.pageCount = Number(window.localStorage.pageCount) + 1;
+    } else {
+        window.localStorage.pageCount = 1;
+    }
+
+    document.write(window.localStorage.pageCount);*/
+
+    if (window.sessionStorage.pageCount) {
+        window.sessionStorage.pageCount = Number(window.sessionStorage.pageCount) + 1;
+    } else {
+        window.sessionStorage.pageCount = 1;
+    }
+
+    document.write(window.sessionStorage.pageCount);
+</script>
+</body>
+</html>

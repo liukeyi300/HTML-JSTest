@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Drag</title>
+    <style>
+        div {
+            width: 600px;
+            height: 600px;
+            float: left;
+            background: #f0f1f2;
+        }
+
+        #div3 {
+            width:100px;
+            height:100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+
+    <div id="div3" draggable="true"></div>
+    <img src="image/menu.png" width="512" height="512" alt="" id="drag1" draggable="true">
+
+    <script>
+        var div = document.getElementById('div1'),
+            div2 = document.getElementById('div2'),
+            div3 = document.getElementById('div3'),
+            img = document.getElementById('drag1');
+
+        div.addEventListener('drop', onDrop);
+        div.addEventListener('dragover', onDragOver);
+
+        div2.addEventListener('drop', onDrop);
+        div2.addEventListener('dragover', onDragOver);
+
+        img.addEventListener('dragstart', onDragStart);
+        div3.addEventListener('dragstart', onDragStart);
+
+        function onDrop(ev) {
+            ev.preventDefault();
+
+            var data = ev.dataTransfer.getData('Text');
+
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+        function onDragOver(ev) {
+            ev.preventDefault();
+        }
+
+        function onDragStart(ev) {
+            ev.dataTransfer.setData('Text', ev.target.id);
+        }
+    </script>
+</body>
+</html>

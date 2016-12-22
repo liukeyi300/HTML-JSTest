@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="c1"></canvas>
+<script>
+    function RoundedRect(cxt, x, y, width, height, radius) {
+        cxt.beginPath();
+        cxt.moveTo(x + radius, y);
+        cxt.lineTo(x + width - radius, y);
+        cxt.arcTo(x + width, y, x + width, y + radius, radius);
+        cxt.lineTo(x + width, y + height - radius);
+        cxt.arcTo(x + width, y + height, x + width - radius, y + height, radius);
+        cxt.lineTo(x + radius, y + height);
+        cxt.arcTo(x , y + height, x, y + height - radius, radius);
+        cxt.lineTo(x, y + radius);
+        cxt.arcTo(x, y, x + radius, y, radius);
+        cxt.stroke();
+    }
+
+    var cxt = document.getElementById('c1').getContext('2d');
+
+    RoundedRect(cxt, 30, 30, 100, 100, 40);
+
+    /*cxt.beginPath();
+    cxt.moveTo(5, 5);
+    cxt.lineTo(5, 50);
+    cxt.arcTo(5, 60, 15,60, 10);
+    cxt.stroke();*/
+</script>
+</body>
+</html>
