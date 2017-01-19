@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*var data = {};
+    var c = data.data[0].queryLeftNewDTO.rw_num;*/
+    var xhr = new XMLHttpRequest();
+    var data = {
+
+    };
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+            }
+        }
+    };
+
+    xhr.open('POST', 'https://kyfw.12306.cn/otn/leftTicket/queryZ?leftTicketDTO.train_date=2017-01-26&leftTicketDTO.from_station=BJP&leftTicketDTO.to_station=CSQ&purpose_codes=ADULT', true);
+    xhr.setRequestHeader('Username', 'eCommerce');
+    xhr.setRequestHeader('Password', 'password');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8');
+    xhr.send(null);
+</script>
+</body>
+</html>

@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="jquery/jquery-2.1.4.min.js"></script>
 </head>
 <body>
 <script>
 
     (function(i) {
-        setInterval(function() {
+        setTimeout(function() {
             var xhr = new XMLHttpRequest();
             var data = [{
                 soId : 'TestLky' + i,
@@ -19,12 +18,13 @@
                 saleOrg : '麦富迪',
                 remark : null,
                 soItems : [{
-                    matId : 'A010CH',
+                    matId : 'C005CH',
                     soiType : 'D',
                     pckMode : '袋装',
                     unitQty : 1,
-                    petName : null,
-                    matFunc: '肠道护理,增强免疫,亮泽被毛',
+                    quantity: 1,
+                    petName : '亮泽被毛',
+                    matFunc: null,
                     petAge:'成犬期',
                     petBirthday:null,
                     petWeight:12.00,
@@ -33,7 +33,24 @@
                     petExercise:'0.5-1h',
                     petFeedQty: 182,
                     petFeedFrq: '1-2',
-                    masterQuote: '范德萨发生发生方式飞洒发的说法大师法第三方大师傅大师傅是大幅度是发'
+                    masterQuote: '唯其尊重自己的人.才更勇于缩小自己'
+                },{
+                    matId: '6958862100403',
+                    soiType: 'N',
+                    pckMode: '袋装',
+                    unitQty: 40,
+                    matFunc: null,
+                    quantity: 1,
+                    petName: null,
+                    petAge: null,
+                    petBirthday: null,
+                    petWeight: 0.0,
+                    petImageURL: null,
+                    petBreed: null,
+                    petExercise:null,
+                    petFeedQty: null,
+                    petFeedFrq: null,
+                    masterQuote: null
                 }]
             }];
 
@@ -51,9 +68,8 @@
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8');
             xhr.send('jsonData=' + JSON.stringify(data));
             i ++;
-        }, 1000);
+        }, 2000);
     })(1);
-
 
 </script>
 </body>
