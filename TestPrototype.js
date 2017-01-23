@@ -75,6 +75,7 @@ for (let i = 0, length = a.length; i < length; i ++) {
 console.log(e.length);
 */
 
+/*
 function Animal() {
     this.name = 'Animal';
 
@@ -90,4 +91,16 @@ function Cat() {
 let cat = new Cat();
 let animal = new Animal();
 animal.showName.call(cat, '');
-console.log(Animal.prototype);
+console.log(Animal.prototype);*/
+
+let bind = Function.prototype.call.bind(Function.prototype.bind);
+function abc() {
+    console.log(this.test);
+}
+let obj = {
+    test: 'haha'
+};
+
+
+
+bind(abc, obj)();
