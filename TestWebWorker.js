@@ -9,3 +9,9 @@ onmessage = function (e) {
     }
     postMessage(r);
 };
+
+var a = {
+    ORDER_LIST: 'abc'
+}
+
+console.log(a['ORDER_LIST'])

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<p>Test</p>
+<script>
+    window.onload = function() {
+        var div = document.getElementsByTagName('div')[0];
+        div.addEventListener('click', alert1, true);
+
+        var p = document.getElementsByTagName('p')[0];
+        p.addEventListener('click', doWhile, true);
+    };
+
+    function alert1() {
+        alert(this.style);
+    }
+
+    function doWhile() {
+        var i = true;
+        while(i) {
+            setTimeout(function() {
+                i = false;
+            }, 2000);
+        }
+    }
+</script>
+</body>
+</html>
